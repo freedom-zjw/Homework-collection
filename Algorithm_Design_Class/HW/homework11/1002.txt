@@ -1,0 +1,25 @@
+﻿1002. Permutation Generation
+Total:	708	Accepted:	280
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+Enumerate all the permutations with size n and output them. You should output these permutations in lexicographical order.
+
+Input
+An integer n (n<=9).
+
+Output
+Output all the permutations with size n.
+
+Sample Input
+ Copy sample input to clipboard
+3
+Sample Output
+1 2 3
+1 3 2
+2 1 3
+2 3 1
+3 1 2
+3 2 1
+Hint
+题目可以用printf输出，并且注意行末不输出空格

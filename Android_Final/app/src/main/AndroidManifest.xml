@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.chonor.final_pro">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+        <activity android:name=".Main_Tabhost"
+            android:launchMode="singleTask"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".chat.Add_new_chat" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="ADD_NEW_CHAT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".login_register.LoginActivity" android:launchMode="singleTask" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".login_register.RegisterActivity" android:launchMode="singleTask" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".info.Edit_information" android:launchMode="singleTask" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".Lesson.Lesson_information" android:launchMode="singleTask"/>
+        <activity android:name=".Lesson.Lesson_list" android:launchMode="singleTask"/>
+        <activity android:name=".Lesson.Lesson_add" android:launchMode="singleTask" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".notice.Notice_receive" android:launchMode="singleTask"/>
+        <activity android:name=".notice.Notice_send" android:launchMode="singleTask" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".notice.Notice_information" android:launchMode="singleTask"/>
+        <activity android:name=".homework.Homework_infor" android:launchMode="singleTask"/>
+        <activity android:name=".homework.Homework_receive" android:launchMode="singleTask"/>
+        <activity android:name=".homework.Homework_send" android:launchMode="singleTask"/>
+        <activity android:name=".Lesson.Student_list" android:launchMode="singleTask"/>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="cn.chonor.final_pro.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <receiver android:name=".Main_Tabhost$StaticReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.chonor.final_pro.staticreceiver" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+
+</manifest>

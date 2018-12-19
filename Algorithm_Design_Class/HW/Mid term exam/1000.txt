@@ -1,0 +1,30 @@
+﻿1000. 卖牛奶
+Total:	1130	Accepted:	180
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+某食品厂厂长想要对他的牛奶做一个促销:你可以用x个空瓶，或者y个奶嘴来换一瓶完整的维他奶。现在你有n个奶瓶和m个奶嘴，问最多可以喝多少瓶奶？
+
+一瓶奶喝完之后剩下一个瓶盖和一个奶嘴，中途不能借奶瓶或者奶嘴以凑整。例如，借一个空瓶，然后换完回来后还掉这个空瓶是不允许的。
+
+ 
+
+Input
+第一行为数据组数T(1<=T<=20)，表示数据的组数。
+
+后面T行，每行四个数字x,y,n,m，意义如上。(1<=x,y,n,m<=6)
+
+ 
+
+Output
+T行，每行一个整数，表示最多可以喝的瓶数。如果可以喝无数瓶奶，那么就输出INF
+
+Sample Input
+ Copy sample input to clipboard
+2
+1 3 1 1
+4 3 6 4
+Sample Output
+INF
+4
+Problem Source: 期中小测

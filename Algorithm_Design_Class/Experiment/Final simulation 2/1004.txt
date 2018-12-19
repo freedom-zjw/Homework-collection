@@ -1,0 +1,30 @@
+1004. Catch the thief
+Total:	9	Accepted:	6
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+A thief has robbed a bank in city 1 and he wants to go to city N. The police know that the thief will choose the shortest path to get to his destination. As there may be multiple shortest paths, the police want to calculate the number of all the cities that the thief may visit. (Including city 1 and city N) 
+
+Input
+The input may contain several test cases.
+
+Each test case starts with a line containing an integer N, indicating the number of cities.
+
+The next N lines describe a N*N matrix A. the jth element in the ith row indicates the distance between city i and city j is Aij (Aij=Aji). Aij=-1 means city i and city j is not connected.
+
+N=0 indicates the end of the input.
+
+Output
+ For each test case, just print the total number of the cities the thief may visit in a single line.
+
+Sample Input
+ Copy sample input to clipboard
+5
+0 1 4 -1 -1
+1 0 -1 2 -1
+4 -1 0 -1 2
+-1 2 -1 0 3
+-1 -1 2 3 0
+0
+Sample Output
+5

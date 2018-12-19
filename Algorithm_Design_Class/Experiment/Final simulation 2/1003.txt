@@ -1,0 +1,51 @@
+﻿1003. Brackets Matching
+Total:	14	Accepted:	8
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+Let us define a regular brackets sequence in the following way:
+
+1. Empty sequence is a regular sequence.
+
+2. If S is a regular sequence, then (S) , [S] and {S} are both regular sequences.
+
+3. If A and B are regular sequences, then AB is a regular sequence.
+
+ 
+
+For example, all of the following sequences of characters are regular brackets sequences:
+
+(), [], {}, (){[]}
+
+While the following character sequences are not:
+
+(, [, {, )(, ([)], {[(]
+
+ 
+
+Write a program to judge whether a given sequence is a regular bracket sequence or not.
+
+    
+
+Input
+ The input may contain several test cases.
+
+The first line of each test case contains the length of the bracket sequence N (1<=N<=100). The second line contains N characters including ‘(‘, ‘)’, ‘[‘, ‘]’,’{‘ or ’}’.
+
+Input is terminated by EOF.
+
+Output
+For each test case, if the sequence is a regular brackets sequence, output “YES” on a single line, else output “NO”. 
+
+Sample Input
+ Copy sample input to clipboard
+2
+()
+4
+((]]
+6
+{[]}()
+Sample Output
+YES
+NO
+YES

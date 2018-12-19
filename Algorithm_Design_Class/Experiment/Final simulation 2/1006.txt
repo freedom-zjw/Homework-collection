@@ -1,0 +1,27 @@
+1006. Inversion Number
+Total:	16	Accepted:	7
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+There is a permutation P with n integers from 1 to n. You have to calculate its inversion number, which is the number of pairs of Pi and Pj satisfying the following conditions: i<j and Pi>Pj. 
+
+Input
+ The input may contain several test cases.
+
+In each test case, the first line contains a positive integer n (n<=100000) indicating the number of elements in P. The following n lines contain n integers making the permutation P.
+
+Input is terminated by EOF.
+
+Output
+ For each test case, output a line containing the inversion number.
+
+Sample Input
+ Copy sample input to clipboard
+5
+3
+4
+1
+5
+2
+Sample Output
+5

@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://cdevlab.top/article/e57450c6/ -->
+<html class="theme-next mist use-motion" lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" defer="" async="" src="./Retrofit开发-1-基础 _ 三月_files/uaest.js.下载"></script>
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <meta name="keywords" content="Android,Retrofit,OkHttp">
+
+
+<script src="./Retrofit开发-1-基础 _ 三月_files/push.js.下载"></script><script src="./Retrofit开发-1-基础 _ 三月_files/hm.js.下载"></script><script src="./Retrofit开发-1-基础 _ 三月_files/hm.js(1).下载"></script><script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="./Retrofit开发-1-基础 _ 三月_files/jquery.fancybox.css.下载" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="./Retrofit开发-1-基础 _ 三月_files/font-awesome.min.css.下载" rel="stylesheet" type="text/css">
+
+<link href="./Retrofit开发-1-基础 _ 三月_files/main.css.下载" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://cdevlab.top/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="Retrofit 本文介绍 OkHttp 和 Retrofit 的基本使用，包括：  创建和配置 OkHttpClient 创建和配置 Retrofit 如何使用 Retrofit 定义接口发起请求 关于 Retrofit 中 method，path，query param，body，Header 注解声明的介绍。">
+<meta name="keywords" content="Android,Retrofit,OkHttp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retrofit开发-1-基础">
+<meta property="og:url" content="http://cdevlab.top/article/e57450c6/index.html">
+<meta property="og:site_name" content="三月">
+<meta property="og:description" content="Retrofit 本文介绍 OkHttp 和 Retrofit 的基本使用，包括：  创建和配置 OkHttpClient 创建和配置 Retrofit 如何使用 Retrofit 定义接口发起请求 关于 Retrofit 中 method，path，query param，body，Header 注解声明的介绍。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-10T06:40:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Retrofit开发-1-基础">
+<meta name="twitter:description" content="Retrofit 本文介绍 OkHttp 和 Retrofit 的基本使用，包括：  创建和配置 OkHttpClient 创建和配置 Retrofit 如何使用 Retrofit 定义接口发起请求 关于 Retrofit 中 method，path，query param，body，Header 注解声明的介绍。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cdevlab.top/article/e57450c6/">
+
+
+
+
+
+
+
+
+
+
+<script src="./Retrofit开发-1-基础 _ 三月_files/pace.min.js.下载"></script>
+<link href="./Retrofit开发-1-基础 _ 三月_files/pace-theme-flash.css.下载" rel="stylesheet">
+<style>
+      .pace .pace-progress {
+        background: #0000; /*进度条颜色*/
+        height: 0px;
+      }
+      .pace .pace-progress-inner {
+         box-shadow: 0 0 0px #0000, 0 0 0px     #0000; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+        display: none;
+        border-top-color: #00d9cf;    /*上边框颜色*/
+        border-left-color: #00d9cf;    /*左边框颜色*/
+      }
+
+    @media screen and (min-width: 800px) {
+      .pace .pace-progress {
+        background: #00d9cf; /*进度条颜色*/
+        height: 2px;
+      }
+      .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #00d9cf, 0 0 5px #00d9cf; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+        border-top-color: #00d9cf;    /*上边框颜色*/
+        border-left-color: #00d9cf;    /*左边框颜色*/
+      }
+    }
+ 
+</style>
+
+
+
+  <title>Retrofit开发-1-基础 | 三月</title>
+  <style>
+    .forkme{
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .forkme{
+        display: inline;
+      }
+    }
+    </style>
+    
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f8f6a04af9dbc90a9b452c6884c718f5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?59588130c0c528acb1a243d03844a7d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <script src="./Retrofit开发-1-基础 _ 三月_files/share.js.下载"></script><style type="text/css">.fancybox-margin{margin-right:17px;}</style><style>@font-face{font-family:uc-nexus-iconfont;src:url(chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff) format('woff'),url(chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf) format('truetype')}</style><style type="text/css">
+:root .footer > #box[style="width:100%;height:100%;position:fixed;top:0"]
+{ display: none !important; }</style><link rel="stylesheet" href="./Retrofit开发-1-基础 _ 三月_files/share_style0_16.css.下载"></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN" class="pace-done" style="padding-right: 320px;"><div id="uc_reader_tip" style="position: absolute; top: 171px; left: 83px; z-index: 2147483647; height: 0px; border: 0px; padding: 0px; margin: 0px;"></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+  <!--- add Fork me on Github  -->
+    <div class="forkme">
+   <a target="_blank" href="https://github.com/chendongMarch" rel="external nofollow noopener noreferrer"><img style="position: absolute; top: 0; left: 0; border: 0;" src="./Retrofit开发-1-基础 _ 三月_files/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67.下载" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+    </div>
+    <!--- add Fork me on Github -->   
+    
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+    <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="http://cdevlab.top/" class="brand" rel="start" style="opacity: 1;">
+        <span class="logo-line-before"><i class="" style="transform: translateX(100%);"></i></span>
+        <span class="site-title" style="opacity: 1; top: 0px;">三月</span>
+        <span class="logo-line-after"><i class="" style="transform: translateX(-100%);"></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://cdevlab.top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://cdevlab.top/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://cdevlab.top/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://cdevlab.top/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Timeline
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags" style="opacity: 1; transform: translateY(0px);">
+          <a href="http://cdevlab.top/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search" style="opacity: 1; transform: translateY(0px);">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+
+
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" style="opacity: 1; display: block; transform: translateY(0px);">
+    <link itemprop="mainEntityOfPage" href="http://cdevlab.top/article/e57450c6/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chendong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Retrofit开发-1-基础</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T14:31:11+08:00">
+                2017-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="http://cdevlab.top/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="http://cdevlab.top/categories/Android/Library/" itemprop="url" rel="index">
+                    <span itemprop="name">Library</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/article/e57450c6/" class="leancloud_visitors" data-flag-title="Retrofit开发-1-基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count">167</span>
+             </span>
+          
+
+          
+
+          <br>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>Retrofit</code></p>
+<p>本文介绍 <code>OkHttp</code> 和 <code>Retrofit</code> 的基本使用，包括：</p>
+<blockquote>
+<p>创建和配置 <code>OkHttpClient</code></p>
+<p>创建和配置 <code>Retrofit</code></p>
+<p>如何使用 <code>Retrofit</code> 定义接口发起请求</p>
+<p>关于 <code>Retrofit</code> 中 <code>method</code>，<code>path</code>，<code>query param</code>，<code>body</code>，<code>Header</code> 注解声明的介绍。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="添加依赖"><a href="http://cdevlab.top/article/e57450c6/#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 网络请求</span></div><div class="line">okhttp3                 : <span class="string">'com.squareup.okhttp3:okhttp:3.4.2'</span>,</div><div class="line"><span class="comment">// 单元测试，未用</span></div><div class="line">okhttp3Mockwebserver    : <span class="string">'com.squareup.okhttp3:mockwebserver:3.4.2'</span>,</div><div class="line"><span class="comment">// 调试工具类库</span></div><div class="line">stetho                  : <span class="string">'com.facebook.stetho:stetho:1.4.2'</span>,</div><div class="line">stetho_okhttp3          : <span class="string">'com.facebook.stetho:stetho-okhttp3:1.4.2'</span>,</div><div class="line"><span class="comment">// json解析</span></div><div class="line">gson                    : <span class="string">'com.google.code.gson:gson:2.6.1'</span>,</div><div class="line"><span class="comment">// retrofit 2.0</span></div><div class="line">retrofit                : <span class="string">'com.squareup.retrofit2:retrofit:2.3.0'</span>,</div><div class="line">converter_gson          : <span class="string">'com.squareup.retrofit2:converter-gson:2.1.0'</span>,</div><div class="line"><span class="comment">// 日志打印</span></div><div class="line">logging_interceptor     : <span class="string">'com.squareup.okhttp3:logging-interceptor:3.8.0'</span>,</div></pre></td></tr></tbody></table></figure>
+<h2 id="创建-OkHttp"><a href="http://cdevlab.top/article/e57450c6/#创建-OkHttp" class="headerlink" title="创建 OkHttp"></a>创建 OkHttp</h2><p><code>Retrofit</code> 是对 <code>OkHttp</code> 的封装，提供了使用注解更简单的构建各种请求，配置各种参数的方式。本质发起网络请求的还是 <code>OkHttp</code>，但 <code>Retrofit</code> 让这一操作更加的简单优雅。</p>
+<p>创建一个 <code>OkHttpClent</code> 并进行简单配置</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 创建 OkHttpClient</div><div class="line"> *</div><div class="line"> * <span class="doctag">@return</span> OkHttpClient</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">private</span> OkHttpClient <span class="title">buildOkHttpClient</span><span class="params">()</span> </span>{</div><div class="line">    OkHttpClient.Builder okHttpBuilder = <span class="keyword">new</span> OkHttpClient.Builder();</div><div class="line">    <span class="comment">// 连接超时</span></div><div class="line">    okHttpBuilder.connectTimeout(<span class="number">5</span> * <span class="number">1000</span>, TimeUnit.MILLISECONDS);</div><div class="line">    <span class="comment">// 读超时</span></div><div class="line">    okHttpBuilder.readTimeout(<span class="number">5</span> * <span class="number">1000</span>, TimeUnit.MILLISECONDS);</div><div class="line">    <span class="comment">// 写超时</span></div><div class="line">    okHttpBuilder.writeTimeout(<span class="number">5</span> * <span class="number">1000</span>, TimeUnit.MILLISECONDS);</div><div class="line">    <span class="comment">// 清除 interceptors</span></div><div class="line">    okHttpBuilder.interceptors().clear();</div><div class="line">    okHttpBuilder.networkInterceptors().clear();</div><div class="line">    <span class="comment">// 自定义 Interceptor，用来添加全局 Header</span></div><div class="line">    okHttpBuilder.addNetworkInterceptor(<span class="keyword">new</span> HeaderInterceptor());</div><div class="line">    <span class="comment">// 自定义 Interceptor，进行日志打印，扩展自 HttpLoggingInterceptor</span></div><div class="line">    okHttpBuilder.addNetworkInterceptor(<span class="keyword">new</span> LogInterceptor(LogInterceptor.Level.BOTH));</div><div class="line">    <span class="comment">// 失败后重试</span></div><div class="line">    okHttpBuilder.retryOnConnectionFailure(<span class="keyword">true</span>);</div><div class="line">    <span class="comment">// face book 调试框架</span></div><div class="line">    okHttpBuilder.addNetworkInterceptor(<span class="keyword">new</span> StethoInterceptor());</div><div class="line">    <span class="comment">// token校验，返回 403 时</span></div><div class="line">    okHttpBuilder.authenticator(<span class="keyword">new</span> TokenAuthenticator());</div><div class="line">    <span class="keyword">return</span> okHttpBuilder.build();</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h2 id="创建-Retrofit"><a href="http://cdevlab.top/article/e57450c6/#创建-Retrofit" class="headerlink" title="创建 Retrofit"></a>创建 Retrofit</h2><p><code>OkHttp</code> 只负责发起网络请求，维护网络连接等操作，而 <code>Retrofit</code> 帮我们将网络传输的数据转换为可用的 <code>model</code> 对象，并且提供简单的数据处理方式。</p>
+<p>配置 <code>CallAdapterFactory</code> 为 <code>RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io())</code> 用来将返回的数据转换为 <code>RxJava</code> 的 <code>Observable</code> 对象，但是本文还没涉及到 <code>RxJava</code> 的部分。</p>
+<p>配置 <code>ConverterFactory</code>  为 <code>GsonConverterFactory.create(new Gson())</code> 用来使用 <code>GSON</code> 将网络数据序列化为可用对象。</p>
+<p>ps：<code>baseUrl</code> 要求以 <code>/</code> 结尾，而请求的 <code>path</code> 要求不以 <code>/</code> 开头，也就是说我们需要类似 <code>https://www.baidu.com/</code> 的形式。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 创建 retrofit</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> okHttpClient client</div><div class="line"> * <span class="doctag">@return</span> retrofit</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">private</span> Retrofit <span class="title">buildRetrofit</span><span class="params">(OkHttpClient okHttpClient)</span> </span>{</div><div class="line">    <span class="keyword">final</span> Retrofit.Builder retrofitBuilder = <span class="keyword">new</span> Retrofit.Builder();</div><div class="line">    <span class="comment">// client</span></div><div class="line">    retrofitBuilder.client(okHttpClient);</div><div class="line">    <span class="comment">// baseUrl</span></div><div class="line">    retrofitBuilder.baseUrl(BASE_URL);</div><div class="line">    <span class="comment">// rxJava 调用 adapter</span></div><div class="line">    retrofitBuilder.addCallAdapterFactory(</div><div class="line">            RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()));</div><div class="line">    <span class="comment">// 数据转换 adapter</span></div><div class="line">    retrofitBuilder.addConverterFactory(GsonConverterFactory.create(<span class="keyword">new</span> Gson()));</div><div class="line">    <span class="keyword">return</span> retrofitBuilder.build();</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h2 id="创建-api-服务接口"><a href="http://cdevlab.top/article/e57450c6/#创建-api-服务接口" class="headerlink" title="创建 api 服务接口"></a>创建 api 服务接口</h2><p>创建接口类，使用注解声明网络请求的方法和相关参数，这里只是一个简单的例子，更多参数和配置将在后面说明，如：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApiService</span> </span>{</div><div class="line"></div><div class="line">    String GET_USER_INFO = <span class="string">"api/v1/user/info"</span>;</div><div class="line">	 </div><div class="line">    <span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line">    <span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">(@Header(<span class="string">"Authorization"</span>)</span> String auth)</span>;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>使用 <code>Retrofit</code> 初始化 <code>ApiService</code>，获取到 <code>ApiService</code> 的实例之后就可以使用该实例发起请求。</p>
+<p>我使用 <code>ApiRequest</code> 持有 <code>ApiService</code> 的实例，同时 <code>ApiRequest</code> 是一个单例，作为发起网络请求的管理者。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">createService</span><span class="params">()</span> </span>{</div><div class="line">    Retrofit retrofit = buildRetrofit(buildOkHttpClient());</div><div class="line">    mApiService = retrofit.create(ApiService.class);</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>发起请求</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getUserInfo</span><span class="params">()</span> </span>{</div><div class="line">    <span class="comment">// 从单例中获取 ApiService</span></div><div class="line">    ApiService service = ApiRequest.getService();</div><div class="line">    <span class="comment">// 创建请求</span></div><div class="line">    Call&lt;UserInfoDTOResponse&gt; userCall = service.getUser();</div><div class="line">    <span class="comment">// 发起请求</span></div><div class="line">    userCall.enqueue(<span class="keyword">new</span> Callback&lt;UserInfoDTOResponse&gt;() {</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(@NonNull Call&lt;UserInfoDTOResponse&gt; call,@NonNull Response&lt;UserInfoDTOResponse&gt; response)</span> </span>{</div><div class="line">            UserInfoDTOResponse body = response.body();</div><div class="line">            <span class="keyword">if</span> (body != <span class="keyword">null</span> &amp;&amp; body.getData() != <span class="keyword">null</span>) {</div><div class="line">                L.e(TAG, body.getData().toString());</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(@NonNull Call&lt;UserInfoDTOResponse&gt; call,@NonNull Throwable t)</span> </span>{</div><div class="line">        }</div><div class="line">    });</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<hr>
+<p>下面对 <code>Retrofit</code> 中 <code>method</code>,<code>path</code>,<code>qurey</code>,<code>body</code>,<code>header</code>几个部分分别说明。</p>
+<h2 id="Method"><a href="http://cdevlab.top/article/e57450c6/#Method" class="headerlink" title="Method"></a>Method</h2><p><code>Retrofit</code> 支持 <code>GET</code>，<code>POST</code>，<code>PUT</code>，<code>DELETE</code>，<code>HEAD</code>，<code>OPTION</code> 等请求方式，并有对应的注解。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line"><span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line"><span class="meta">@DELETE</span>(DELETE_RM_BABY)</div><div class="line"><span class="function">Call&lt;BaseResponse&gt; <span class="title">deleteBaby</span><span class="params">(@Path(PATH_BABY_ID)</span> Long babyId)</span>;</div></pre></td></tr></tbody></table></figure>
+<h2 id="PATH"><a href="http://cdevlab.top/article/e57450c6/#PATH" class="headerlink" title="PATH"></a>PATH</h2><p>请求路径，请求路径中可以包含参数，并在参数中使用 <code>@PATH</code> 注解来动态改变路径，<br>比如路径 <code>api/v1/user/{id}</code>，使用注解 <code>@PATH("id") Long id</code> 即可改变路径中 <code>{id}</code> 请求时的值。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  path 中不包含参数</span></div><div class="line"><span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line"><span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line"></div><div class="line">String PATH_BABY_ID = <span class="string">"babyId"</span>;</div><div class="line">String PUT_EDIT_BABY = <span class="string">"api/v2/baby/doEdit/{"</span> + PATH_BABY_ID + <span class="string">"}"</span>;</div><div class="line"></div><div class="line"><span class="meta">@PUT</span>(PUT_EDIT_BABY)</div><div class="line"><span class="function">Call&lt;BaseResponse&gt; <span class="title">putEditBaby</span><span class="params">(@Path(PATH_BABY_ID)</span> Long babyId)</span>;</div></pre></td></tr></tbody></table></figure>
+<h2 id="Body"><a href="http://cdevlab.top/article/e57450c6/#Body" class="headerlink" title="Body"></a>Body</h2><p>发送 <code>POST</code> 、<code>PUT</code> 请求时通常需要携带 <code>body</code> 数据，使用 <code>@Body</code> 注解，如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@PUT</span>(PUT_EDIT_BABY)</div><div class="line"><span class="function">Call&lt;BaseResponse&gt; <span class="title">putEditBaby</span><span class="params">(@Body BabyParam babyParam)</span></span>;</div></pre></td></tr></tbody></table></figure>
+<h2 id="Query"><a href="http://cdevlab.top/article/e57450c6/#Query" class="headerlink" title="Query"></a>Query</h2><p>配置 <code>UrlQuery</code> 参数，比如 <code>api/v1/user/list?limit=100&amp;offset=10</code> 这种类型。有两种配置方式：</p>
+<p>第一种使用 <code>@Query</code> 注解，如 <code>@Query("userId") Long userId</code> 的形式。这种形式可以传递 <code>null</code> 值，如果某个参数为 <code>null</code>，将不会拼接在 <code>url</code> 后面。</p>
+<p>第二种使用 <code>@QueryMap</code> 注解，如 <code>@QureyMap Map&lt;String,String&gt; params</code>  的形式。这种形式传递一个 <code>map</code> 作为参数，但是 <code>map</code> 中 <code>value</code> 不能为 <code>null</code>，否则会抛出异常。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@GET</span>(GET_BABY_RELATION_LIST)</div><div class="line"><span class="function">Call&lt;UserBabyRelationResp&gt; <span class="title">getBabyRelationList</span><span class="params">(@Query(<span class="string">"babyId"</span>)</span> Long babyId, @<span class="title">Query</span><span class="params">(<span class="string">"limit"</span>)</span> <span class="keyword">int</span> limit, @<span class="title">Query</span><span class="params">(<span class="string">"offset"</span>)</span> Long offset)</span>;</div><div class="line"></div><div class="line"><span class="meta">@GET</span>(GET_BABY_RELATION_LIST)</div><div class="line"><span class="function">Call&lt;UserBabyRelationResp&gt; <span class="title">getBabyRelationList</span><span class="params">(@QueryMap Map&lt;String,String&gt; map)</span></span>;</div></pre></td></tr></tbody></table></figure>
+<h2 id="Header"><a href="http://cdevlab.top/article/e57450c6/#Header" class="headerlink" title="Header"></a>Header</h2><p>静态 <code>Header</code>，使用 <code>@Headers</code> 注解添加在请求接口上，用法如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Headers</span>({<span class="string">"key:value"</span>,<span class="string">"key:value"</span>})</div><div class="line"><span class="meta">@Headers</span>(<span class="string">"key:value"</span>)</div><div class="line"></div><div class="line">eg:</div><div class="line"><span class="meta">@Headers</span>({<span class="string">"Authorization: authValue"</span>,</div><div class="line">                 <span class="string">"User-Agent: Retrofit-Sample-App"</span>})</div><div class="line"><span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line"><span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line"><span class="meta">@Headers</span>(<span class="string">"Authorization: authValue"</span>)</div><div class="line"><span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line"><span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">()</span></span>;</div></pre></td></tr></tbody></table></figure>
+<p>局部动态 <code>Header</code>，使用 <code>@Header("key")</code> 和 <code>@HeaderMap</code> 注解添加在请求参数上，动态配置，用法如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Header</span>(<span class="string">"Authorization"</span>) String auth</div><div class="line"><span class="comment">// retrofit:2.1.0 添加</span></div><div class="line"><span class="meta">@HeaderMap</span> Map&lt;String, String&gt; headers</div><div class="line"></div><div class="line">eg:</div><div class="line"><span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line"><span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">(@Header(<span class="string">"Authorization"</span>)</span> String auth)</span>;</div><div class="line"></div><div class="line"><span class="meta">@GET</span>(GET_USER_INFO)</div><div class="line"><span class="function">Call&lt;UserInfoDTOResponse&gt; <span class="title">getUser</span><span class="params">(@HeaderMap Map&lt;String, String&gt; headers)</span></span>;</div></pre></td></tr></tbody></table></figure>
+<p>全局配置 <code>Header</code>，为 <code>OkHttp</code> 添加 <code>Interceptor</code>，需要注意的是 <code>addNetWorkIntercepror()</code> 和 <code>addInterceptor()</code> 的区别。当进入 <code>netWorkInterceptor</code> 时已经添加了 <code>User-Agent</code> 等 <code>Header</code>，此时要把自己的 <code>Header</code> 一个一个 <code>addHeader()</code> 进去，防止把原来的冲掉。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">HeaderInterceptor</span> <span class="keyword">implements</span> <span class="title">Interceptor</span> </span>{</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = HeaderInterceptor.class.getSimpleName();</div><div class="line"></div><div class="line">    <span class="comment">// 到达 netWorkInterceptor 时，默认 header 已经添加，不能使用替换的方式，要使用 addHeader 的方式</span></div><div class="line">    <span class="comment">// 到达 interceptor 时，还没有添加默认 header ,可以直接替换原来的 header ，后面会追加默认 header</span></div><div class="line">    </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Response <span class="title">intercept</span><span class="params">(@NonNull Chain chain)</span> <span class="keyword">throws</span> IOException </span>{</div><div class="line">        Request request = chain.request();</div><div class="line">        L.e(TAG, <span class="string">"添加全局 header "</span>);</div><div class="line">        Request.Builder builder = request.newBuilder();</div><div class="line">        Map&lt;String, String&gt; headersMap = ApiRequest.getHeadersMap();</div><div class="line">        <span class="keyword">for</span> (String key : headersMap.keySet()) {</div><div class="line">            builder.addHeader(key, headersMap.get(key));</div><div class="line">        }</div><div class="line">        Response response;</div><div class="line">        <span class="keyword">try</span> {</div><div class="line">            response = chain.proceed(builder.build());</div><div class="line">        } <span class="keyword">catch</span> (Exception e) {</div><div class="line">            e.printStackTrace();</div><div class="line">            <span class="keyword">throw</span> e;</div><div class="line">        }</div><div class="line">        <span class="keyword">return</span> response;</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line">OkHttpClient.Builder okHttpBuilder = <span class="keyword">new</span> OkHttpClient.Builder();</div><div class="line">okHttpBuilder.addNetworkInterceptor(<span class="keyword">new</span> HeaderInterceptor());</div></pre></td></tr></tbody></table></figure>
+<h2 id="Todo"><a href="http://cdevlab.top/article/e57450c6/#Todo" class="headerlink" title="Todo"></a>Todo</h2><p>更多内容还没有涉及…</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 表单提交</span></div><div class="line"><span class="meta">@FormUrlEncoded</span></div><div class="line"><span class="meta">@POST</span>(<span class="string">"user/edit"</span>)</div><div class="line"><span class="meta">@HEAD</span></div><div class="line"><span class="function">Call&lt;User&gt; <span class="title">updateUser</span><span class="params">(@Field(<span class="string">"first_name"</span>)</span> String first, @<span class="title">Field</span><span class="params">(<span class="string">"last_name"</span>)</span> String last)</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 文件上传</span></div><div class="line"><span class="meta">@Multipart</span></div><div class="line"><span class="meta">@PUT</span>(<span class="string">"user/photo"</span>)</div><div class="line"><span class="function">Call&lt;User&gt; <span class="title">updateUser</span><span class="params">(@Part(<span class="string">"photo"</span>)</span> RequestBody photo, @<span class="title">Part</span><span class="params">(<span class="string">"description"</span>)</span> RequestBody description)</span>;</div></pre></td></tr></tbody></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      chendong
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://cdevlab.top/article/e57450c6/" title="Retrofit开发-1-基础">http://cdevlab.top/article/e57450c6/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="http://cdevlab.top/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="http://cdevlab.top/tags/Library/" rel="tag"># Library</a>
+          
+            <a href="http://cdevlab.top/tags/Retrofit/" rel="tag"># Retrofit</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="http://cdevlab.top/article/d8c55445/" rel="next" title="我为什么要写博客">
+                <i class="fa fa-chevron-left"></i> 我为什么要写博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="http://cdevlab.top/article/3251baff/" rel="prev" title="RxJava2.x开发-1-基础">
+                RxJava2.x开发-1-基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first" style="width: 100%; top: 5px; transform: rotateZ(-45deg);"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle" style="opacity: 0;"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last" style="width: 100%; top: -5px; transform: rotateZ(45deg);"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar sidebar-active" style="display: block; width: 320px;">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person" style="opacity: 1; display: block; transform: translateX(0px);">
+          <img class="site-author-image" itemprop="image" src="./Retrofit开发-1-基础 _ 三月_files/avatar.jpg.下载" alt="chendong">
+          <p class="site-author-name" itemprop="name">chendong</p>
+           
+              <p class="site-description motion-element" itemprop="description" style="opacity: 1; display: block; transform: translateX(0px);"></p>
+           
+        </div>
+        <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="http://cdevlab.top/archives">
+                <span class="site-state-item-count">123</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="http://cdevlab.top/categories/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="http://cdevlab.top/tags/index.html">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chendongMarch" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline" style="opacity: 1; display: block; transform: translateX(0px);">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/chendongMarch" title="我的GitHub" target="_blank" rel="external nofollow noopener noreferrer">我的GitHub</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/chendong_" title="我的CSDN" target="_blank" rel="external nofollow noopener noreferrer">我的CSDN</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/d01a240b73c7" title="我的简书" target="_blank" rel="external nofollow noopener noreferrer">我的简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lebens.top/" title="Lebens" target="_blank" rel="external nofollow noopener noreferrer">Lebens</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active" style="opacity: 1; display: block; transform: translateX(0px);">
+          <div class="post-toc" style="max-height: 512px; width: calc(100% + 17px);">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#添加依赖"><span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#创建-OkHttp"><span class="nav-text">创建 OkHttp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#创建-Retrofit"><span class="nav-text">创建 Retrofit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#创建-api-服务接口"><span class="nav-text">创建 api 服务接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#Method"><span class="nav-text">Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#PATH"><span class="nav-text">PATH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#Body"><span class="nav-text">Body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#Query"><span class="nav-text">Query</span></a></li><li class="nav-item nav-level-2 active active-current"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#Header"><span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="http://cdevlab.top/article/e57450c6/#Todo"><span class="nav-text">Todo</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  ©  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+  <i class="fa fa-star"></i>
+</span>
+  <span class="author" itemprop="copyrightHolder">chendong</span>
+</div>
+
+
+<!--<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>-->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top back-to-top-on">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/index.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/fastclick.min.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/jquery.lazyload.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/velocity.min.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/velocity.ui.min.js.下载"></script>
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/jquery.fancybox.pack.js.下载"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/utils.js.下载"></script>
+
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/motion.js.下载"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/scrollspy.js.下载"></script>
+<script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/post-details.js.下载"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="./Retrofit开发-1-基础 _ 三月_files/bootstrap.js.下载"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="./Retrofit开发-1-基础 _ 三月_files/av-core-mini-0.6.1.js.下载"></script>
+  <script>AV.initialize("qRLDbg4qm6ih0WcFdjXykQFW-gzGzoHsz", "PNgsnT6iK7aYrODrgNBA79Gc");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+<div></div></body></html>

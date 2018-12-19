@@ -1,0 +1,27 @@
+﻿	
+1001. Pythagorean Proposition
+Total:	14	Accepted:	11
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+One day, WXYZ got a wooden stick, he wanted to split it into three sticks and make a right-angled triangle. You will be given the length of the stick, and your task is to help WXYZ to find all different right triangles that can be made. 
+
+Input
+ The first line of the input is a positive integer T. T is the number of test cases followed. Each test case contains a integer L (1<=L<=1000), representing the length of the stick.
+
+Output
+ For each test case, output all different right-angled triangles. For each triangle, output one line containing three integers X Y Z, (1<=X<=Y<=Z, X*X+Y*Y=Z*Z). All triangles are sorted in lexicographical order.
+
+Output a blank line after each test case.
+
+Sample Input
+ Copy sample input to clipboard
+3
+40
+50
+60
+Sample Output
+8 15 17
+
+10 24 26
+15 20 25

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slider</title>
+   <link href="CSS/style.css" rel="stylesheet" type="text/css" charset="utf-8">
+   <script type="text/javascript" src="js/slider.js" charset="utf-8"></script>
+</head>
+<body onload="main()">
+    <div id="slideMain"  onmouseover="MouseOver()" onmouseout="MouseOut()">
+        <div id="slides" class="slides">
+            <img id="img1" class="slide" src="images/img1.jpg">
+            <img id="img2" class="slide" src="images/img2.jpg">
+            <img id="img3" class="slide" src="images/img3.jpg">
+            <img id="img4" class="slide" src="images/img1.jpg">
+        </div>
+        <div id="point" class="point">
+            <img id="p1" class="Point1" src="images/navigator.png" onclick="click0()">
+            <img id="p2" class="Point2" src="images/navigator.png" onclick="click1()">
+            <img id="p3" class="Point3" src="images/navigator.png" onclick="click2()">
+        </div>
+        <div id="arrow1">
+            <img id="arrow11" class="Arrow" src="images/arrows-30.png" onclick="goLeft()">
+        </div>
+        <div id="arrow2">
+            <img id="arrow21" class="Arrow" src="images/arrows-30.png" onclick="goRight()">
+        </div>
+    </div>
+</body>
+
+</html>

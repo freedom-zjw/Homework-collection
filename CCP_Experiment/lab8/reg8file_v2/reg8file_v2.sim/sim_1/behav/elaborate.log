@@ -1,0 +1,19 @@
+Vivado Simulator 2016.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2016.3/bin/unwrapped/win64.o/xelab.exe -wto 29167f3d2923474aae061e3a59e582f4 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot reg8file_sim_behav xil_defaultlib.reg8file_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/ipshared/38c8/src/reg8file.v" Line 1. Module reg8file doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/ipshared/38c8/src/reg8file.v" Line 1. Module reg8file doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffe
+Compiling module xil_defaultlib.reg8
+Compiling module xil_defaultlib.reg8file
+Compiling module xil_defaultlib.reg8file_ip_reg8file_0_0
+Compiling module xil_defaultlib.reg8file_ip
+Compiling module xil_defaultlib.reg8file_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot reg8file_sim_behav

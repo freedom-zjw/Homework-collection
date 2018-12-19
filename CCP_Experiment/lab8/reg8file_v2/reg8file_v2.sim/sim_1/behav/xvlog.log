@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/ipshared/38c8/src/dffe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dffe
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/ipshared/38c8/src/reg8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg8
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/ipshared/38c8/src/reg8file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg8file
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/ip/reg8file_ip_reg8file_0_0/sim/reg8file_ip_reg8file_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg8file_ip_reg8file_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.ip_user_files/bd/reg8file_ip/hdl/reg8file_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg8file_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.srcs/sim_1/new/reg8file_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg8file_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/VivadoProject/reg8file_v2/reg8file_v2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

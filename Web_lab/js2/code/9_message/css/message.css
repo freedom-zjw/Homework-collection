@@ -1,0 +1,44 @@
+* {font-family:"宋体"}
+#shadow {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: gray;
+  opacity: 0.5;
+}
+#msgbox1 {
+  display: none;
+  position: fixed;
+  width: 200px;
+  height: 100px;
+  border: solid 1px black;
+  background-color: white;
+  z-index: 20;
+}
+div.msgheader {
+  background-color: lightgray;
+  border-bottom: solid 1px black;
+}
+div.msgheader>.msg {
+  padding: 4px;
+  display: inline-block;
+}
+div.msgclose {
+  border-left: solid 1px black;
+  background-color: darkgray;
+  float: right;
+}
+div.msgcontent {  padding: 4px;  }
+div.btns {
+  width: 80px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+}
+div.btns>.ok {
+  width:100px;
+  margin: auto;
+}

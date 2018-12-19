@@ -1,0 +1,72 @@
+描述 Description  
+已知一个树的前序遍历和 中序遍历求后序遍历
+   
+输入格式 Input Format  
+第一行，前序遍历访问的节点的 字符序列 
+第二行，中序遍历访问节点的字符序列（树的深度不大于7） 
+
+输出格式 Output Format  
+如果输入数据准确，输出一行， 后序遍历访问的字符序列
+如果输入数据错误，输出“No Solution” 
+
+INPUT:
+ABDECFG
+DBEAFCG
+
+OUTPUT:
+DEBFGCA
+
+【参考程序】:
+var s1,s2,ss:ansistring;
+    n:longint;
+    bo:boolean;
+procedure search(x1,y1,x2,y2:longint);
+var k,i:longint;
+begin
+    if not bo then exit;
+    if x1=y1 then ss:=ss+s1[x1]
+    else
+    begin
+        k:=0;
+        for i:=x2 to y2 do
+          if s2[i]=s1[x1] then
+          begin
+              k:=i;
+              break;
+          end;
+        if k=0 then
+        begin
+            bo:=false;
+            exit;
+        end;
+        if k=x2 then
+        begin
+            search(x1+1,y1,x2+1,y2);
+            ss:=ss+s1[x1];
+        end
+        else if k=y2 then
+        begin
+            search(x1+1,y1,x2,y2-1);
+            ss:=ss+s1[x1];
+        end
+        else
+        begin
+            search(x1+1,x1+1+(k-1-x2+1)-1,x2,k-1);
+            search(x1+1+(k-1-x2+1)-1+1,y1,k+1,y2);
+            ss:=ss+s1[x1];
+        end;
+    end;
+end;
+begin
+    while not eof do
+    begin
+        readln(s1);
+        readln(s2);
+        n:=length(s1);
+        bo:=true;
+        ss:='';
+        search(1,n,1,n);
+        if not bo then writeln('No Solution')
+        else writeln(ss);
+    end;
+end.

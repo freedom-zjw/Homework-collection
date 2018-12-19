@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.freedom.lab3.MainActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/itemslist"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/shopcarlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5px"
+                android:background="@color/cutline" />
+
+            <TextView
+                android:id="@+id/shopcarlist_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="*"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/shopcarllist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/shopcarlist_icon"
+                android:layout_toRightOf="@+id/shopcarlist_icon"
+                android:layout_marginLeft="20dp"
+                android:text="购物车"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/shopcarlist_icon"
+                android:layout_toRightOf="@+id/shopcarlist_icon"
+                android:layout_marginLeft="220dp"
+                android:text="价格"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/shopcarlist_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/shopcar"
+        android:src="@drawable/shoplist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        app:backgroundTint="@color/white"
+        android:layout_alignBottom="@+id/itemslist"
+        android:layout_alignRight="@+id/itemslist"
+        android:layout_marginRight="10dp" />
+
+
+</RelativeLayout>

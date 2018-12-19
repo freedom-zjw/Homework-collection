@@ -1,0 +1,212 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date             : Fri May 12 08:37:37 2017
+| Host             : 032 running 64-bit Service Pack 1  (build 7601)
+| Command          : 
+| Design           : reg8file
+| Device           : xc7a35tcpg236-1
+| Design State     : Routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 8.429 |
+| Dynamic (W)              | 8.310 |
+| Device Static (W)        | 0.119 |
+| Effective TJA (C/W)      | 5.0   |
+| Max Ambient (C)          | 42.9  |
+| Junction Temperature (C) | 67.1  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Slice Logic    |     0.062 |       98 |       --- |             --- |
+|   LUT as Logic |     0.052 |       25 |     20800 |            0.12 |
+|   BUFG         |     0.006 |        1 |        32 |            3.13 |
+|   F7/F8 Muxes  |     0.003 |        8 |     32600 |            0.02 |
+|   Register     |     0.001 |       64 |     41600 |            0.15 |
+| Signals        |     0.243 |       99 |       --- |             --- |
+| I/O            |     8.005 |       25 |       106 |           23.58 |
+| Static Power   |     0.119 |          |           |                 |
+| Total          |     8.429 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.418 |       0.369 |      0.048 |
+| Vccaux    |       1.800 |     0.308 |       0.291 |      0.017 |
+| Vcco33    |       3.300 |     2.249 |       2.248 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 5.0                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------+-----------+
+| Name     | Power (W) |
++----------+-----------+
+| reg8file |     8.310 |
+|   rf0    |     0.004 |
+|     r0   |     0.004 |
+|     r1   |    <0.001 |
+|     r2   |    <0.001 |
+|     r3   |    <0.001 |
+|     r4   |    <0.001 |
+|     r5   |    <0.001 |
+|     r6   |    <0.001 |
+|     r7   |    <0.001 |
+|   rf1    |     0.004 |
+|     r0   |    <0.001 |
+|     r1   |    <0.001 |
+|     r2   |    <0.001 |
+|     r3   |    <0.001 |
+|     r4   |    <0.001 |
+|     r5   |    <0.001 |
+|     r6   |     0.004 |
+|     r7   |    <0.001 |
+|   rf2    |     0.005 |
+|     r0   |    <0.001 |
+|     r1   |    <0.001 |
+|     r2   |    <0.001 |
+|     r3   |    <0.001 |
+|     r4   |    <0.001 |
+|     r5   |    <0.001 |
+|     r6   |     0.004 |
+|     r7   |    <0.001 |
+|   rf3    |     0.066 |
+|     r0   |     0.009 |
+|     r1   |     0.010 |
+|     r2   |     0.007 |
+|     r3   |     0.006 |
+|     r4   |     0.007 |
+|     r5   |     0.008 |
+|     r6   |     0.011 |
+|     r7   |     0.008 |
+|   rf4    |     0.004 |
+|     r0   |    <0.001 |
+|     r1   |    <0.001 |
+|     r2   |    <0.001 |
+|     r3   |    <0.001 |
+|     r4   |    <0.001 |
+|     r5   |    <0.001 |
+|     r6   |     0.003 |
+|     r7   |    <0.001 |
+|   rf5    |     0.004 |
+|     r0   |    <0.001 |
+|     r1   |    <0.001 |
+|     r2   |    <0.001 |
+|     r3   |    <0.001 |
+|     r4   |    <0.001 |
+|     r5   |    <0.001 |
+|     r6   |     0.003 |
+|     r7   |    <0.001 |
+|   rf6    |     0.005 |
+|     r0   |    <0.001 |
+|     r1   |    <0.001 |
+|     r2   |    <0.001 |
+|     r3   |    <0.001 |
+|     r4   |    <0.001 |
+|     r5   |    <0.001 |
+|     r6   |     0.004 |
+|     r7   |    <0.001 |
+|   rf7    |     0.022 |
+|     r0   |     0.002 |
+|     r1   |     0.002 |
+|     r2   |     0.002 |
+|     r3   |     0.002 |
+|     r4   |     0.002 |
+|     r5   |     0.002 |
+|     r6   |     0.006 |
+|     r7   |     0.002 |
++----------+-----------+
+
+

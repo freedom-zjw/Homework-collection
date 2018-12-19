@@ -1,0 +1,45 @@
+	.file	1 "swap.c"
+	.section .mdebug.abi32
+	.previous
+	.text
+	.align	2
+	.globl	swap
+	.ent	swap
+swap:
+	.frame	$fp,16,$31		# vars= 8, regs= 1/0, args= 0, gp= 0
+	.mask	0x40000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+	
+	addiu	$sp,$sp,-16
+	sw	$fp,8($sp)
+	move	$fp,$sp
+	sw	$4,16($fp)
+	sw	$5,20($fp)
+	lw	$2,16($fp)
+	nop
+	lw	$2,0($2)
+	nop
+	sw	$2,0($fp)
+	lw	$2,20($fp)
+	nop
+	lw	$3,0($2)
+	lw	$2,16($fp)
+	nop
+	sw	$3,0($2)
+	lw	$3,20($fp)
+	lw	$2,0($fp)
+	nop
+	sw	$2,0($3)
+	move	$sp,$fp
+	lw	$fp,8($sp)
+	addiu	$sp,$sp,16
+	j	$31
+	nop
+
+	.set	macro
+	.set	reorder
+	.end	swap
+	.size	swap, .-swap
+	.ident	"GCC: (GNU) 4.1.1"

@@ -1,0 +1,22 @@
+﻿1007. Modular equation
+Total:	14	Accepted:	4
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+Give you a modular equation ax≡b (mod n)  (意思就是ax mod n = b mod n). Count how many different x (0<=x<n) satisfying the equation. 
+
+Input
+The input may contain several test cases.
+
+Each test contains a line with three integers a, b and n, each integer is positive and no more than 10^9.
+
+Input is terminated by EOF. 
+
+Output
+ For each test case, output a line containing the number of solutions.
+
+Sample Input
+ Copy sample input to clipboard
+4 2 6
+Sample Output
+2

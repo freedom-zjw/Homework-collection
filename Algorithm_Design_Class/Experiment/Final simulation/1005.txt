@@ -1,0 +1,38 @@
+1005. Prime Palindromes
+Total:	9	Accepted:	2
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+The number 151 is a prime palindrome because it is both a prime number and a palindrome (it is the same number when read forward as backward). Write a program that finds all prime palindromes in the range of two supplied numbers a and b (5 <= a < b <= 100,000,000); both a and b are considered to be within the range .
+
+Input
+There are multiple test cases.
+
+Each case contains two integers, a and b.
+
+a=b=0 indicates the end of input.
+
+Output
+For each test case, output the list of palindromic primes in numerical order, one per line.
+
+ 
+
+Sample Input
+Copy sample input to clipboard
+5 500
+0 0
+Sample Output
+5
+7
+11
+101
+131
+151
+181
+191
+313
+353
+373
+383
+
+输出[a,b]之间的所有回文素数

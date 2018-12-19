@@ -1,0 +1,27 @@
+1005. Connection
+Total:	19	Accepted:	8
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+There are N cities in the country and M bidirectional roads between the cities. The government wants to build some new roads such that for any pair of cities there is at least one path between them. Now you have to find out the minimal amount of roads that have to build.
+
+    
+
+Input
+ The input may contain multiple test cases.
+
+For each test case, the first line is two integers N (1<=N<=100) and M (1<=M<=N*N/2), indicating the number of cities and the number of roads. Then the next M lines each contain two integers x and y (0<=x,y<n), meaning that there is a road between cities x and cities y.
+
+N=M=0 indicates the end of input.
+
+Output
+For each test case, print the answer in a single line.?
+
+Sample Input
+ Copy sample input to clipboard
+5 2
+0 1
+2 3
+0 0
+Sample Output
+2

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Mon May 15 12:09:42 2017
+# Process ID: 11708
+# Current directory: D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12820 D:\大学\大二\大二下\计算机组成原理\实验\第8次\reg8file_v2\reg8file_v2.xpr
+# Log file: D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/vivado.log
+# Journal file: D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/reg8file_v2.xpr
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run reg8file_ip_reg8file_0_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

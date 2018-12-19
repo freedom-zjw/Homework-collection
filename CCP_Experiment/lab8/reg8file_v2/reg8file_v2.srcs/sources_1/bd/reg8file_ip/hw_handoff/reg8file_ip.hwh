@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon May 15 12:11:39 2017" VIVADOVERSION="2016.3">
+
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a35ti" NAME="reg8file_ip" PACKAGE="cpg236" SPEEDGRADE="-1L"/>
+
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="clrn" SIGIS="undef" SIGNAME="External_Ports_clrn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="clrn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="wen" SIGIS="undef" SIGNAME="External_Ports_wen">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="wen"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="d" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_d">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="d"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="2" NAME="wsel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_wsel">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="wsel"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="2" NAME="rsel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rsel">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="rsel"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="q" RIGHT="0" SIGIS="undef" SIGNAME="reg8file_0_q">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="reg8file_0" PORT="q"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE FULLNAME="/reg8file_0" HWVERSION="1.0" INSTANCE="reg8file_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="reg8file" VLNV="freedom:reg8file_ip:reg8file:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="reg8file_ip_reg8file_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clrn" SIGIS="undef" SIGNAME="External_Ports_clrn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clrn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wen" SIGIS="undef" SIGNAME="External_Ports_wen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="d" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_d">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="d"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="wsel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_wsel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wsel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="rsel" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rsel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rsel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="q" RIGHT="0" SIGIS="undef" SIGNAME="reg8file_0_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="q"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

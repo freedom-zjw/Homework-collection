@@ -1,0 +1,25 @@
+﻿1008. Threecolor problem
+Total:	7	Accepted:	7
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+ 有红黄蓝3种颜色的n个珠子，师傅希望悟空把它们排成红色珠子在左，黄色珠子居中，蓝色珠子在右的一行，然后告诉师傅，从左数起，第m个珠子是什么颜色。众所周知，悟空是只猴子，他没有这个耐心，你帮帮他吧。
+
+Input
+输入第一行为一个整数t（0<t<=10），表示测试用例个数。
+
+每个测试用例占用两行，第1行为两个整数n（0<n<=1000）和m (0<m<=n)，中间用空格隔开。n表示珠子的个数，m表示要输出排序后的第m个珠子颜色；第2行为n个字符构成的序列，序列中的字符为r, y,或者 b，分别表示红、黄、蓝三种珠子，字符中间没有空格。﻿
+
+Output
+为每个测试用例单独一行输出指定的珠子颜色。
+
+Sample Input
+ Copy sample input to clipboard
+2 
+3 1
+bry
+4 3
+rbyb
+Sample Output
+r 
+b

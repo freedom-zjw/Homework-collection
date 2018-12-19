@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Mon May 15 12:46:32 2017
+# Process ID: 12728
+# Current directory: D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/reg8file_v2.runs/reg8file_ip_reg8file_0_0_synth_1
+# Command line: vivado.exe -log reg8file_ip_reg8file_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source reg8file_ip_reg8file_0_0.tcl
+# Log file: D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/reg8file_v2.runs/reg8file_ip_reg8file_0_0_synth_1/reg8file_ip_reg8file_0_0.vds
+# Journal file: D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/reg8file_v2.runs/reg8file_ip_reg8file_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source reg8file_ip_reg8file_0_0.tcl -notrace

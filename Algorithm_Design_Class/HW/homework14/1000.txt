@@ -1,0 +1,32 @@
+﻿1000. Order Crossover
+Total:	17	Accepted:	8
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+The procedure of Order Crossover (OX) applied in the Genetic Algorithm is as follows.
+
+1. Select a substring from a parent at random.
+
+2. Produce a proto-child by copying the substring into the corresponding position of it.
+
+3. Delete the cities which are already in the substring from the 2nd parent. The resulted sequence of citires contains the cities that the proto-child needs.
+
+4. Place the cities into the unfixed positions of the proto-child from left to right according to the order of the sequence to produce an offspring. 
+
+
+
+Input
+There may be multiple cases. For each case, the first line is an integer n (1<=n<=100). The second line and the third line give two parents(each line has n integer). The fourth line gives the starting and ending position (x and y with 0<=x<=y<n) of the substring.
+
+Output
+For each case, output  two resultant offsprings.
+
+Sample Input
+ Copy sample input to clipboard
+9
+1 2 3 4 5 6 7 8 9
+5 7 4 9 1 3 6 2 8
+2 5
+Sample Output
+7 9 3 4 5 6 1 2 8
+2 5 4 9 1 3 6 7 8

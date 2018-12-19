@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>AJAX-post</title>
+  <style>
+    p {font-size:20px}
+  </style>
+</head>
+<body>
+  <h1>Ajax-post</h1>
+  <p>id：<input id="t1" type="text"></p>
+  <p>姓名：<input id="t2" type="text" onblur="update()"></p>
+  <p><span id="t4"></span></p>
+  <script language="JavaScript" type="text/javascript">
+    /*创建 XMLHttpRequest对象*/
+    function createXMLHttpObject(){
+      var xmlhttp;
+      if (window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+      }
+      else{
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      return xmlhttp;
+    }
+    /* -----------ajax方法-----------*/
+    function update(){
+      var t1=document.getElementById("t1");
+      var t2=document.getElementById("t2");
+      var t4=document.getElementById("t4");
+      xmlHttp=createXMLHttpObject();
+      if (xmlHttp==null){
+         alert('您的浏览器不支持AJAX！'); 
+　　　　  return; 
+      }
+      //汉字需要编码
+      var param="t1="+encodeURIComponent(t1.value)+"&t2="+encodeURIComponent(t2.value);
+      xmlHttp.open("post","post.jsp",true);//(method,url：文件在服务器上的位置,是否异步)
+      xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xmlHttp.send(param);//将请求发送到服务器。string：仅用于POST请求
+      t4.innerHTML="正在执行...";
+      getReponse() //处理响应结果
+    }
+    function getReponse(){
+      xmlHttp.onreadystatechange = function(){
+        if (xmlHttp.readyState == 4){
+            if (xmlHttp.status >=200 && xmlHttp.status < 300 || xmlHttp.status == 304){
+              alert(xmlHttp.responseText.replace(/(^\s*)|(\s*$)/g, ""));
+              let t4=document.getElementById("t4");
+              t4.innerHTML=xmlHttp.responseText;
+            }
+            else {
+              alert("error")
+              let t4 =document.getElementById("t4");
+              t4.innerHTML="发生未知错误";
+            }
+        }
+      }
+    }
+   </script>
+</body>
+</html>

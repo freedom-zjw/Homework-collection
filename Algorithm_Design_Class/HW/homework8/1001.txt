@@ -1,0 +1,21 @@
+﻿1001. N Queen Problem
+Total:	398	Accepted:	264
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+Given N queens on an N*N chess board, find the number of ways of placing these queens so that they will not attack each other.
+
+Use backtracking to solve the problem.
+
+Input
+There are multiple cases. For each case, there is only one line given the number of queens N (1<=N<=9).
+
+Output
+For each case, output the number of all possible placements of queens.
+
+Sample Input
+ Copy sample input to clipboard
+4
+Sample Output
+2
+Problem Source: ZSU ACM/ICPC Team

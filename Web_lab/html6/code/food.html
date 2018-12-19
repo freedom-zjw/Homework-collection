@@ -1,0 +1,99 @@
+﻿<!DOCTYPE  html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8"/>
+      <title>This is my title</title>
+      <style>
+        #container {
+			 width: 320px;
+			 height: 500px;
+			 background: #EEEEEE;
+			 margin: auto;
+         }
+         #food {
+			 background: white;
+			 width: 250px;
+			 height: 250px;
+			 margin: 70px 20px 20px 50px;
+			 position: relative;
+         }
+         #title {
+			 text-align: center;
+			 padding: 20px;
+			 font-family: 黑体;
+			 font-size: 1.5em;
+			 font-weight: bold;
+         }
+         #description {
+			 width: 15em;
+			 margin: 10px auto;
+			 font-family: 楷体; 
+         }
+         .part {
+			 width: 121px;
+			 height: 121px;
+			 background: url("images/food.jpg");
+			 background-size:auto 280px;
+         }
+         #p1 {
+			 position: absolute;
+			 left:1%;
+			 top: 1%;
+			 background-position: -35px -37px;
+			 animation: myfirst 3s linear;
+         }
+         #p2 {
+			 position: absolute;
+			 right:1%;
+			 top: 1%;
+			 background-position: -155px -37px;
+			 animation: mysecond 3s linear;
+         }
+         #p3 {
+			 
+			 position: absolute;
+			 left:1%;
+			 bottom:1%;
+			 background-position: -35px bottom;
+			 animation: mythird 3s linear;
+         }
+         #p4 {
+			 position: absolute;
+			 right:1%;
+			 bottom:1%;
+			 background-position: -155px bottom;
+			 animation: myfourth 3s linear;
+         }
+ 
+         @keyframes myfirst{
+			 0%{transform: translate(-40%,-40%)};
+			 100%{transform: translate(0%,0%)};
+          }
+         @keyframes mysecond{
+			 0%{transform: translate(40%,-40%)};
+			 100%{transform: translate(0%,0%)};
+          }
+         @keyframes mythird{
+			 0%{transform: translate(-40%,40%)};
+			 100%{transform: translate(0%,0%)};
+          }
+         @keyframes myfourth{
+			 0%{transform: translate(40%,40%)};
+			 100%{transform: translate(0%,0%)};
+          }
+
+      </style>
+   </head>
+   <body>
+     <div id="container">
+        <div id="title">美食</div>
+        <div id="description">这是一款意大利牛肉卷，采用了熏牛肉、奶酪、酱进行烹制，色泽诱人，美味可口，欢迎大家前来品尝!</div>
+        <div id="food">
+           <div id="p1" class="part"></div>
+           <div id="p2" class="part"></div>
+           <div id="p3" class="part"></div>
+           <div id="p4" class="part"></div>
+        </div>
+     </div>
+    </body>
+</html>

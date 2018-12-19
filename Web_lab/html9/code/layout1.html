@@ -1,0 +1,136 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8">
+    <title>layout1</title>
+    <style>
+        * {margin:0;padding:0;font:24px 黑体;}
+        li{list-style-type:none}
+        body {background:#FF8}
+        .clear {clear:both}
+        #header_outer{
+            height: 200px;
+            background: #888;
+        }
+        #header{
+            height:200px;
+            width:980px;
+            background:#666;
+            margin:0 auto;
+        }
+        #nav_outer{
+            height:40px;
+            background: #AAA;
+        }
+        #nav_outer .wrapper{
+            height:40px;
+            width:980px;
+            margin:0 auto;
+            background: #555;
+        }
+        #main1_outer{
+            height:420px;
+            background: #CFC;
+        }
+        #main{
+            width:980px;
+            height: 420px;
+            margin:0 auto;
+            background:rgb(170,170,102);
+        }
+        .main_l{
+            background: #A55;
+            width:300px;
+            height:420px;
+            float:left
+        }
+        .main_m{
+            width:370px;
+            height:420px;
+            float:left;
+        }
+        .main_r{
+            float: right;
+			width: 310px;
+			height: 400px;
+			background: #55A;
+        }
+        .row1{
+            height: 140px;
+			background: #F88;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-top: 20px;
+        }
+        .row2{
+            height:200px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-top: 25px;
+			background: #88F;
+		}
+        .main_l .row2{
+            height:220px;
+        }
+        #footer_outer{
+            height:100px;
+            background:#888;
+        }
+        #footer{
+            height:100px;
+            width:980px;
+            background: #666;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header_outer">
+        <div id="header" class="wrapper">
+             Header
+         </div><!--header-->
+    </div> <!--header_outer-->
+
+    <div id="nav_outer">
+        <ul class="wrapper" id="nav">
+            <li>Menu</li>
+        </ul>      
+    </div>
+
+    <div id="main1_outer" class="main_outer">
+        <div class="wrapper" id="main">
+            <div class="main_l">
+                <div class="row1">
+                    board 1
+                 </div>
+                <div class="row2">
+                    board 2
+                </div>
+            </div><!--main_l-->
+            <div class="main_r">
+                <div class="row1">
+                    board 5
+                </div>
+                <div class="row2">
+                    board 6
+                </div>
+            </div><!--main_r-->
+            <div class="main_m">
+                <div class="row1">
+                     board 3
+                </div>
+                <div class="row2">
+                     board 4
+                </div>
+            </div><!--main_m--> 
+            <div class="clear"></div>
+        </div> <!--main wrapper-->
+    </div> <!--main1_outer-->
+
+    <div id="footer_outer">
+        <div id="footer" class="wrapper">
+            Footer
+        </div><!--footer-->
+    </div> <!--footer_outer-->
+</body>
+</html>

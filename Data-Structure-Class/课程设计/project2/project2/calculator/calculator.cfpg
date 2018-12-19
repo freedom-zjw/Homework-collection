@@ -1,0 +1,10 @@
+<Projects version="2.0">
+	<Project active="1">calculator.cfp</Project>
+	<File active="0">main.cpp</File>
+	<File active="0">process.cpp</File>
+	<File active="0">process.h</File>
+	<File active="0">bignum.h</File>
+	<File active="1">bignum.cpp</File>
+	<File active="0">mystack.cpp</File>
+	<File active="0">mystack.h</File>
+</Projects>

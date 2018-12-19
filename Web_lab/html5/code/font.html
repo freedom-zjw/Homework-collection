@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>font</title>
+  <style>
+      html {
+        font-size:  32px;
+      }
+      p:nth-of-type(1) > span:nth-of-type(1) {font-size: 120%; color: red;}
+      p:nth-of-type(1) > span:nth-of-type(2) {font-size: 1.2em; color: green;}
+      p:nth-of-type(1) > span:nth-of-type(3) {font-size: 1.2rem; color: blue;}
+      p:nth-of-type(1) > span:nth-of-type(4) {font-size: xx-large; color: gray;}
+      p:nth-of-type(2) > span:nth-of-type(1) {font-style: italic; text-decoration: line-through; color: green;}
+      p:nth-of-type(2) > span:nth-of-type(2) {font-style: bold; text-decoration: overline; color: purple;}
+      p:nth-of-type(2) > span:nth-of-type(3) {font-style: 700; text-decoration: underline; color: brown;}
+      p:nth-of-type(3) > span:nth-of-type(1) {text-shadow: 2px 3px 1px rgba(0,0,0,0.5) ; color: green;}
+      p:nth-of-type(3) > span:nth-of-type(2) {text-shadow: 2px 3px 1px rgba(0,0,0,0.5), -2px -3px 1px gray ; color: red; font-size: 1.2rem;}
+      p:nth-of-type(3) > span:nth-of-type(3) {letter-spacing: 2em; color: brown;}
+   </style>
+
+</head>
+<body>
+    <div style="font-size: 24px">
+        <p id="test1">
+            字体1：<span>用120%显示字体大小</span> <span>用1.2em显示字体大小</span> <span>用1.2rem显示字体大小</span> <span>用xx-large显示字体大小</span>
+        </p>
+        <p id="test2">
+            字体2：<span>用斜体显示文字</span> <span>用粗体bolder显示文字</span> <span>用粗体700显示文字</span>
+        </p>
+        <p id="test3">
+            字体3：<span>给文字加上阴影</span> <span>给文字加上双阴影</span> <span>改变字符之间的间距</span>
+        </p>
+ 
+    </div>
+</body>
+</html>

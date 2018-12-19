@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="reg8file_ip_reg8file_0_0_synth_1" LaunchDir="D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/reg8file_v2.runs/reg8file_ip_reg8file_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="D:/大学/大二/大二下/计算机组成原理/实验/第8次/reg8file_v2/reg8file_v2.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="reg8file_ip_reg8file_0_0_synth_1"/>
+	</Run>
+</Runs>
+

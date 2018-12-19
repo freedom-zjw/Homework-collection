@@ -1,0 +1,21 @@
+clc
+clear all
+xn=[4,0,3,0,2,0,1];%建立xn序列
+Nx=length(xn);
+n=0:Nx-1;
+nx1=-Nx:2*Nx-1;%设立周期延拓的范围
+x1=xn(mod(nx1,Nx)+1);%建立周期延拓序列
+ny1=nx1+2;
+y1=x1;%将x1右移2位，得到y1
+RN=(nx1>=0)&(nx1<Nx);%在x1的位置向量nx1上设置主值窗
+RN1=(ny1>=0)&(ny1<Nx);%在y1的位置向量ny1上设置主值窗
+subplot(4,1,1),stem(nx1,RN.*x1);%画出x1的主值部分
+title('x1的主值部分')
+subplot(4,1,2),stem(nx1,x1);%画出x1
+title('x1周期序列');
+subplot(4,1,3),stem(ny1,y1);%画出y1
+title('移位后的周期序列y1');
+axis([-10,15,0,4]);
+subplot(4,1,4),stem(ny1,RN1.*y1);%画出y1的主值部分
+title('y1的主值部分');
+axis([-10,15,0,4]);

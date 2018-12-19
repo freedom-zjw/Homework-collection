@@ -1,0 +1,36 @@
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140001", "Qian");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140002", "Li");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140003", "Wang");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140004", "Zhang");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140005", "Zhao");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140006", "Xu");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140007", "Liang");
+
+INSERT IGNORE INTO stu(`num`,`name`)
+         VALUES("140008", "Li");
+
+INSERT IGNORE INTO course(`num`,`name`)
+         VALUES("C160001", "Web");
+
+INSERT IGNORE INTO course(`num`,`name`)
+         VALUES("C160002", "Networking");
+
+INSERT IGNORE INTO course(`num`,`name`)
+         VALUES("C160003", "DataStructure");
+
+INSERT IGNORE INTO course(`num`,`name`)
+         VALUES("C160004", "Algorithm");
+

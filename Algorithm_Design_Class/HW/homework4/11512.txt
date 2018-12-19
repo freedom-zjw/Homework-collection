@@ -1,0 +1,40 @@
+﻿11512. Big Circle
+
+限制条件
+
+时间限制: 2 秒, 内存限制: 256 兆
+
+题目描述
+
+On the opening ceremony of World Cup there was a part where many kids from around the world was trying to make a big circle on the field which symbolized tolerance and multicultural friendship.
+
+They succeed in making a perfect circle, but as they didn't practice very much, kids weren't uniformly distributed on circle. You spotted that very quickly, and you want to know what is the minimum distance between some two kids.
+
+输入格式
+
+First line of the input contains number N (2<=N<=10^5) representing number of kids. Each of next N lines contains two real numbers rounded on two decimal places – coordinates of the each kid. All coordinates will be in interval [-10^6, 10^6]. It is guaranteed that all points will be on circle.
+
+ 
+
+输出格式
+
+First and only line of output should contain one real number (rounded on two decimal places) – Euclidian distance between two nearest kids. Euclidian distance between points (x1, y1) and (x2, y2) is sqrt((x1-x2)^2+(y1-y2)^2).
+
+样例输入
+
+5
+1.00 4.00
+-0.50 -1.60
+4.00 1.00
+3.12 3.12
+-1.60 -0.50
+样例输出
+
+1.56
+提示
+
+In the sample, Kids at points (−0.50,−1.60) and (−1.60,−0.50) are nearest and distance between them is 1.56.
+
+题目来源
+
+2014年每周一赛第七场/JBOI 2014

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE  html>
+<html  lang="zh-cn">
+ <head>
+   <title>编程器</title>
+   <style>
+     [for="code"]{vertical-align:top}
+     #code{width:300px;height:250px;text-align: left}
+     #submit{margin-left: 75px; width:60px;}
+   </style>
+   <script  type="text/javascript">
+      function calc(){
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
+        var c = document.getElementById("code").value;
+        //var z = new Function("x","y",c);
+        //z(x,y);
+        document.write("xxx");
+      }
+   </script>
+ </head>
+ <body>
+    <h1 id="title">编程器</h1>
+    <div id ="content">
+        x:<input type="text" id="x" name="x" value="10"><br/><br/>
+        y:<input type="text" id="y" name="y" value="20"><br/><br/>
+        <label for="code">program:</label>
+        <textarea id="code" name="code">var s=parseInt(x);
+var t=parseInt(y);
+document.write(s*s+t*t);
+        </textarea><br/><br/>
+        <input type="submit" id="submit" name="submit" value="运行" onclick="calc()">
+    </div>
+ </body>
+</html>

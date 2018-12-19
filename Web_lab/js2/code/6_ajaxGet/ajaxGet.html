@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX-get</title>
+  <style>
+     p {font-size:20px}
+   </style>
+</head>
+<body>
+  <h1>Ajax-get</h1>
+  <p>id：<input id="t1" type="text" onblur="query()"></p>
+  <p id="t2">[无]</p>
+  <script language="JavaScript" type="text/javascript">
+    /*创建 XMLHttpRequest对象*/
+    function createXMLHttpObject(){
+      var xmlhttp;
+      if (window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+      }
+      else{
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      return xmlhttp;
+    }
+
+    /* -----------ajax方法-----------*/
+    function query(){
+      var t1=document.getElementById("t1");
+	    
+      xmlHttp=createXMLHttpObject();
+      if (xmlHttp==null){
+         alert('您的浏览器不支持AJAX！'); 
+　　　　  return; 
+      }
+      var msg="get.jsp?id="+t1.value;
+      xmlHttp.open("get", msg, true);// 打开http请求（ open）的参数： get或post， url，是否异步发送
+      xmlHttp.send(null);//发送http请求。 get只能用null作为参数
+      var t2=document.getElementById("t2");
+      t2.innerHTML="正在查询...";
+      getReponse() //处理响应结果
+    }
+    function getReponse(){
+      xmlHttp.onreadystatechange = function(){
+        if (xmlHttp.readyState == 4){
+            if (xmlHttp.status >=200 && xmlHttp.status < 300 || xmlHttp.status == 304){
+              alert(xmlHttp.responseText.replace(/(^\s*)|(\s*$)/g, ""));
+              let t2=document.getElementById("t2");
+              t2.innerHTML=xmlHttp.responseText;
+            }
+            else {
+              alert("error")
+              let t2=document.getElementById("t2");
+              t2.innerHTML="无";
+            }
+        }
+      }
+    }
+   </script>
+</body>
+</html>

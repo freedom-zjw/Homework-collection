@@ -1,0 +1,54 @@
+                       中序后序求前序
+题目:给你二叉树的中序和后序,求它的前序遍历
+
+INPUT:
+BCAD
+CBDA
+
+OUTPUT:
+ABCD
+
+【参考程序】:
+var s1,s2:string;
+    n:longint;
+procedure cal(x1,y1,x2,y2:longint);
+var i,k:longint;
+begin
+    if x2=y2 then write(s2[y2])//注:哪个一开始确定父亲就输出它的序列
+    else
+    begin
+        k:=0;
+        for i:=x1 to y1 do//找中序中父亲的位置
+          if s1[i]=s2[y2] then
+          begin
+              k:=i;
+              break;
+          end;
+        if k=y1 then//没有右孩子,递归左孩子
+        begin
+            write(s2[y2]);
+            cal(x1,y1-1,x2,y2-1);
+        end
+        else if k=x1 then//没有左孩子,递归右孩子
+        begin
+            write(s2[y2]);
+            cal(k+1,y1,x2,y2-1);
+        end
+        else
+        begin//分别递归左右孩子
+            write(s2[y2]);
+            cal(x1,k-1,x2,x2+(k-1-x1+1)-1);
+            cal(k+1,y1,x2+(k-1-x1+1)-1+1,y2-1);
+        end;
+    end;
+end;
+begin
+    while not eof do
+    begin
+        readln(s1);
+        readln(s2);
+        n:=length(s1);
+        cal(1,n,1,n);
+        writeln;
+    end;
+end.

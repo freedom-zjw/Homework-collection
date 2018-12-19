@@ -1,0 +1,42 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+  <title>计时器2</title>
+  <style> 
+     span {text-decoration:underline;}
+     span:hover {cursor:pointer}
+  </style>
+  <script>
+     var t = 0.00;
+     var start = false;
+     function toggleTimer() {
+      if (start == false) {
+        start = true;
+        document.getElementById('start').innerHTML="暂停";
+        timer();
+      } else {
+        start = false;
+        document.getElementById('start').innerHTML="启动";
+      }
+    }
+    function timer() {
+      if (start == true) {
+        document.getElementById('timer').innerHTML=t.toFixed(2);
+        t=t+0.01;
+        setTimeout("timer()",10);
+      }
+    }
+    function resetTimer() {
+      start = false;
+      t = 0.00;
+      document.getElementById('timer').innerHTML=t.toFixed(2);
+      document.getElementById('start').innerHTML="启动";
+    }
+  </script>
+ </head>
+ <body>
+   <h1>计时器2</h1>
+   <div><span id="start" onclick="toggleTimer()">启动</span>  <span onclick="resetTimer()">复位</span></div>
+   <div id="timer">0.00</div>
+ </body>
+</html>

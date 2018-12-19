@@ -1,0 +1,89 @@
+#include<iostream>
+using namespace std;
+//最小的数位数尽可能少的情况下，数值尽量小
+//最大数位数尽可能多的情况下，数字尽量大
+int main()
+{   freopen("a.in","r",stdin); 
+    freopen("b.out","w",stdout); 
+    int n[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+    int tot, x, d, k, flag, t, i;
+    scanf("%d", &tot);
+    while (tot--)
+    {
+        scanf("%d", &x);
+        if (x <= 7)//小于等于7时最小的就是一位数
+        {
+            for (int i = 1; i < 10; i++)
+                if (x == n[i])
+                {
+                    printf("%d ", i);
+                    break;
+                }
+        }
+        else {
+            //想法就是先转换成位数最少的数
+            //然后从前往后把相邻的两位替换成棍数一样数值却小的两位数
+            k = x / 7;
+            d = x %  7;
+            if (d)
+            {
+                int tem;
+                if (d == 1)tem = 9;
+                else
+                    for (int i = 1; i < 10; i++)
+                        if (d == n[i])
+                        {
+                            tem = i;
+                            break;
+                        }
+                bool r = true;//如果是第一位，不能为0
+                while (k)
+                {
+                    bool flag = true;
+                    if (r) i = 1;
+                    else i = 0;
+                    r = false;
+                    for (i; i <= tem; i++)
+                    {
+                        for (int j = 0; j < 8; j++)
+                            if (n[i] + n[j] == d + n[8])
+                            {
+                                printf("%d", i);
+                                tem = j;
+                                flag = false;
+                                k--;
+                                break;
+                            }
+                        if (!flag)break;
+                    }
+                    if (flag)//如果没有找到，直接退出
+                    {
+                        printf("%d", tem);
+                        break;
+                    }
+                    d = n[tem];//没有退出则继续
+                    if (!k)//如果已经到了最后一位则不再循环
+                    {
+                        printf("%d", tem);
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < k; i++)
+                printf("8");
+            printf(" ");
+        }
+        //打印最大位比较简单
+        k = x / 2;
+        t = x % 2;
+        if (t)
+        {
+            printf("7");
+            k--;
+        }
+        for (int i = 0; i < k; i++)
+            printf("1");
+        printf("\n");
+    }
+    return 0;
+}

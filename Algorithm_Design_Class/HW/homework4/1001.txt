@@ -1,0 +1,25 @@
+﻿1001. 1-D closet pair
+Total:	1457	Accepted:	379
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+Given a set S = {p1, p2, ..., pn} of n points in the 1 dimensional space, find the two points of S whose distance is the smallest.
+
+Input
+There are multiple cases.
+
+For each case, the first line is the number of points n (2<=n<=100000). The second line contains n real numbers.
+
+Output
+For each case, output the smallest distance, the answer is rounded to 6 digits after the decimal point.
+
+Sample Input
+ Copy sample input to clipboard
+4
+1 3 6 10
+Sample Output
+2.000000
+Hint
+This problem is simple. We require that  you use the divide-and-conquer algorithm to solve it. Please do not use any sort functions.
+
+You can also solve problem 11512, which is 2-D version.

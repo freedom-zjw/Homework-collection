@@ -1,0 +1,31 @@
+﻿1003. (选做) Subset Generation II
+Total:	502	Accepted:	171
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+ Generate all the subsets of {A, B, ... } of n elements. You should guarantee that the output follows the lexicographical order. 
+
+Input
+ An integer n. (n<=19)
+
+Output
+ Output all the subsets in the lexicographical order. In each subset, the elements should be printed from smallest to largest.
+
+Sample Input
+ Copy sample input to clipboard
+3
+Sample Output
+ 
+A
+AB
+ABC
+AC
+B
+BC
+C
+Hint
+The first line in the sample output is a blank line, which corresponds to an empty set.
+
+""<"A"<"AB"<"ABC"<"AC"<"B"<"BC"<"C"
+
+You'd better not invoke a sort function.

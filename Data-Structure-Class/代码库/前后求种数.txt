@@ -1,0 +1,48 @@
+                  前序后序求二叉树的种数
+给你前序遍历的结果和后序遍历的结果，求二叉树的种数？ 
+比如： 
+AC 
+CA 
+2 
+
+ACK 
+CKA 
+1
+
+Input 
+
+ACK 
+KCA 
+
+Output 
+
+4
+【参考程序】:
+var n:longint;
+    s1,s2:string;
+function work(x1,y1,x2,y2:longint):longint;
+var i,k:longint;
+begin
+  if x1=y1 then work:=1
+  else
+  begin
+    k:=0;
+    for i:=x2 to y2-1 do
+     if s2[i]=s1[x1+1] then
+     begin
+        k:=i;
+        break;
+     end;
+     if k=y2-1 then work:=work(x1+1,y1,x2,y2-1)*2
+     else work:=work(x1+1,x1+1+(k-x2+1)-1,x2,k)*work(x1+1+(k-x2+1)-1+1,y1,k+1,y2-1);
+  end;
+end;
+begin
+    //while not eof do
+    //begin
+        readln(s1);
+        readln(s2);
+        n:=length(s1);
+        writeln(work(1,n,1,n));
+    //end;
+end.

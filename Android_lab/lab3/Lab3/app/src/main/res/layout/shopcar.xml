@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/shopcar_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="*"
+            android:textSize="25dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/shopcar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/shopcar_icon"
+            android:layout_toRightOf="@+id/shopcar_icon"
+            android:layout_marginLeft="20dp"
+            android:text="购物车"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/shopcar_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/shopcar_icon"
+            android:layout_toRightOf="@+id/shopcar_icon"
+            android:layout_marginLeft="220dp"
+            android:text="价格"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+</LinearLayout>

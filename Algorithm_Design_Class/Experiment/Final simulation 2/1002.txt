@@ -1,0 +1,26 @@
+﻿1002. Polynomial
+Total:	17	Accepted:	6
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+ Given a polynomial and the value of the variable x, you task is to calculate the value of the polynomial.
+
+Input
+The first line of the input is a positive integer T. T is the number of test cases followed.
+
+In each test case, the first line contains two integer n and x (0<=n<=50, 0<=x<=10000). The second line contains n+1 integers, representing the coefficients of a polynomial from power degree N down to power degree 0, each integer is no less than 0 and no more than 10000.
+
+    
+
+Output
+The output of each test case should consist one line, containing the result of the polynomial.﻿
+
+Sample Input
+ Copy sample input to clipboard
+1
+2 5
+1 2 3
+Sample Output
+38
+Hint
+1*5^2+2*5^1+3*5^0=38﻿

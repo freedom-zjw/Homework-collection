@@ -1,0 +1,11 @@
+﻿商品               价格        类型    产品信息
+Enchated Forest    ¥ 5.00      作者    Johanna Basford
+Arla Milk          ¥ 59.00     产地    德国
+Devondale Milk     ¥ 79.00     产地    澳大利亚
+Kindle Oasis       ¥ 2399.00   版本    8GB
+waitrose 早餐麦片  ¥ 179.00    重量    2Kg
+Mcvitie's 饼干     ¥ 14.90     产地    英国
+Ferrero Rocher     ¥ 132.59    重量    300g
+Maltesers          ¥ 141.43    重量    118g
+Lindt              ¥ 139.43    重量    249g
+Borggreve          ¥ 28.90     重量    640g

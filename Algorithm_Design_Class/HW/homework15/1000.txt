@@ -1,0 +1,21 @@
+1000. 过山车
+Total:	9	Accepted:	1
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+RPG girls今天和大家一起去游乐场玩，终于可以坐上梦寐以求的过山车了。可是，过山车的每一排只有两个座位，而且还有条不成文的规矩，就是每个女生必须找个个男生做partner和她同坐。但是，每个女孩都有各自的想法，举个例子把，Rabbit只愿意和XHD或PQK做partner，Grass只愿意和linle或LL做partner，PrincessSnow愿意和水域浪子或伪酷儿做partner。考虑到经费问题，boss刘决定只让找到partner的人去坐过山车，其他的人，嘿嘿，就站在下面看着吧。聪明的Acmer，你可以帮忙算算最多有多少对组合可以坐上过山车吗？
+
+Input
+输入数据包含多组数据。对于每组数据的第一行是两个整数N和M（1<=N,M<=100），分别表示女生的人数和男生的人数。接下来的N行，每行M个数，如果是1表示女生Ai愿意和男生Bj做partner，如果是0则为不愿意。
+
+Output
+对于每组数据，输出一个整数，表示可以坐上过山车的最多组合数。
+
+Sample Input
+ Copy sample input to clipboard
+3 3
+0 1 0
+1 0 1
+0 1 0
+Sample Output
+2

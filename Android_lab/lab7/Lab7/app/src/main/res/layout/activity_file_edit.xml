@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10sp"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    android:orientation="vertical"
+    tools:context="com.example.freedom.lab7.FileEdit">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:textColor="@color/title"
+        android:gravity="center"
+        tools:text="File Editor"
+        android:layout_weight="0.11" />
+
+    <EditText
+        android:id="@+id/filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1sp"
+        android:hint="File Name Here"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.5"
+        android:textSize="20sp"
+        android:gravity="top|left"
+        android:hint="File Content Here" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/save"
+            android:layout_marginTop="10sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/load"
+            android:layout_marginTop="10sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="LOAD"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/clear"
+            android:layout_marginTop="10sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="CLEAR"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/delete"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+        android:textColor="@color/red"
+        android:textSize="18sp"/>
+</LinearLayout>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE  html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8"/>
+      <title>This is my title</title>
+      <style>
+         #container {
+             width:500px;
+             height:750px;
+             margin:10px auto;
+             padding:1px;
+			 background: #FFFFE0;
+			 text-align: center;
+         }
+ 		#d1{
+        	animation:  change 3s ease-in;
+			margin: 250px auto;
+        	display: inline-block;
+        	transform: rotate(45deg);
+        	overflow: hidden;
+			border: 1px solid blue;
+			border-radius: 0 0  0 10px;
+	
+    	}
+    	img {
+        	width: 200px;
+        	transform: rotate(-45deg) scale(1.42);
+ 		 }
+	 	@keyframes change{
+			0% { transform:scale(0.2) rotate(45deg);opacity: 0;} 
+			50% { transform:scale(0.6) rotate(200deg);opacity: 0.1 ;}
+			100% { transform:scale(1) rotate(405deg);opacity: 1 ;}
+		  }
+        </style>
+   </head>
+   <body>
+      <div id="container">
+         <div id="d1">
+            <img id="profile" src="images/gyy_profile.jpg">
+         </div>
+      </div>
+    </body>
+</html>
+            

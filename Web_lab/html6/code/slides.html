@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>slides</title>
+    <style>
+        #slideMain {
+            margin: 0 auto;
+            padding: 0;
+            height: 300px;
+            width: 450px;
+            overflow: hidden;
+        }
+        .slide{
+            margin: 0 auto;
+            padding: 0;
+            height: 300px;
+            width: 450px;
+        }
+        .slides {
+            height: 300px;
+            width: 2300px;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            animation-name: myfirst;
+            animation-duration:10s;
+            animation-timing-function:linear; 
+            animation-iteration-count:infinite; 
+            animation-direction: normal;    
+            animation-fill-mode: backwards; 
+            animation-play-state:running;/
+        }
+        @keyframes myfirst { 
+            0% {left:0px; top:0px;}
+            10%{left:0px; top:0px;}
+            25% {left:-455px;  top:0px;}
+            35% {left:-455px;  top:0px;}
+            50% {left:-910px; top:0px;}
+            60% {left:-910px; top:0px;}
+            75% {left:-1362px; top:0px;}
+            85% {left:-1362px; top:0px;}
+            100% {left:-1820px; top:0px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="slideMain">
+         <div class="slides">
+            <img class="slide" src="images/img11.jpg">
+            <img class="slide" src="images/img12.jpg">
+            <img class="slide" src="images/img13.jpg">
+            <img class="slide" src="images/img14.jpg">
+            <img class="slide" src="images/img11.jpg">
+         </div>
+    </div>
+</body>
+</html>

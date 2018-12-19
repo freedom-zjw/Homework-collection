@@ -1,0 +1,47 @@
+﻿<!DOCTYPE  html>
+<html lang="zh-cn">
+   <head>
+      <meta charset="utf-8"/>
+      <title>This is my title</title>
+      <style>
+        #d1,#d2,#d3 {color:#096;text-shadow:3px 3px 3px #CCC;width:4.2em;
+                      font-family:楷体;font-size:48px;border:solid 2px #096;
+        }
+        #d1{
+          animation: roll1 10s linear 0s infinite;
+        }
+        #d2{
+          animation: roll2 10s linear 0s infinite;
+        }
+        #d3{
+          animation: roll3 10s linear 0s infinite;
+        }
+        @keyframes roll1{
+          0% {transform:  rotateX(0deg)}
+          100% {transform:  rotateX(360deg)}
+        }
+        @keyframes roll2{
+          0% {transform:  rotateY(0deg)}
+          100% {transform:  rotateY(360deg)}
+        }
+        @keyframes roll3{
+          0% {transform:  rotateZ(0deg)}
+          100% {transform:  rotateZ(360deg)}
+        }
+      </style>
+   </head>
+   <body>
+      <p>.</p>
+      <p>.</p>
+      <div id="d1">中山大学</div>
+      <p>.</p>
+      <p>.</p>
+      <div id="d2">中山大学</div>
+      <p>.</p>
+      <p>.</p>
+      <div id="d3">中山大学</div>
+      <p>.</p>
+      <p>.</p>
+    </body>
+</html>
+                

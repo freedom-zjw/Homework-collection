@@ -1,0 +1,24 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+<title>计时器1</title>
+  <style> 
+     span {text-decoration:underline;}
+     span:hover {cursor:pointer}
+  </style>
+  <script>
+     var t = 0.00;
+     var start = false;
+     function timer(){
+		    document.getElementById('timer').innerHTML=t.toFixed(2);
+		    t=t+0.01;
+		    setTimeout("timer()",10);
+	    }
+  </script>
+</head>
+<body>
+  <h1>计时器1</h1>
+  <div><span id="start" onclick="timer()">启动</span></div>
+  <div id="timer">0.00</div>
+</body>
+</html>

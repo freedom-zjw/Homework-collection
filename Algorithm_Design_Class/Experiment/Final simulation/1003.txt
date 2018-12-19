@@ -1,0 +1,40 @@
+﻿	
+1003. Pair
+Total:	2	Accepted:	1
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+ The N cities of Estiah are connected by N-1 roads. The roads are built in a way that it's always possible to travel between any two cities.
+
+Now the king of Estiah wants to pair adjacent cities into defending units. Two cities are adjacent if they are connected directly by a road. Each defending unit consists of exactly two cities, and each city can never be paired into two different defending units.
+What the king wants to know is if it's possible to have all the cities paired into defending units. Can you help him ?
+
+Input
+ The input consists of several test cases.
+The first line of the input is an positive integer indicating the number of test cases following.
+Each test case starts with an positive integer N (1<=N<=10000) , which is the number of cities. Cities are numbered from 1 to N.
+The next N-1 lines each contains two positive integer A and B, indicating that there is a road connecting city A and city B.
+
+Output
+ For each test case, output a line containing "Yes" if there is a way to pair all the cities, or "No" otherwise.
+
+Sample Input
+ Copy sample input to clipboard
+2
+6
+3 4
+6 5
+4 6
+2 1
+6 2
+6
+3 4
+2 1
+4 6
+4 2
+6 5
+Sample Output
+Yes
+Yes
+
+给定一个n点，n-1条边的连通图，就是一棵最小生成树，一个点可以和它相邻的一个点组队，问所有点能否都组好队，一个点只能在一个队中，不能同时分别和两个点组队

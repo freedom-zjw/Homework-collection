@@ -1,0 +1,31 @@
+1004. Play The Game
+Total:	2	Accepted:	2
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+Rocking is a lazy boy. One day his little brother challenged him with a problem. His brother gave him an N*N matrix, and asked him to choose N numbers from the matrix with no two numbers in the same row or column. Certainly there're lots of ways to choose the N numbers. But his brother wanted to see whether Rocking can choose the numbers in a way that it can produce the largest sum by adding up all the N numbers.
+
+Rocking doesn't want to lose, of course, to such a little kid. But also he doesn't like to make efforts on choosing numbers and calculating. So he asks for your help. Please write a program for him to produce the largest sum he could get with the provided matrix.
+
+Input
+Input consists of T cases, with T in the first line.
+
+In each case, the first line contains an integer N(1<=N<=16), the size of the matrix.
+
+The next N lines each contain N non-negative integers, as the elements of the matrix, each of them will not exceed 10,000.
+
+Output
+For each case, output a single line contains an integer, indicating the largest sum he could get by following the preceding rule.
+
+Sample Input
+ Copy sample input to clipboard
+1
+4
+4 3 2 1
+5 6 7 8
+12 11 10 9
+13 14 15 16
+Sample Output
+38
+
+在一个N*N的矩阵中选出N个数，不能有任意两个数在同一行或者同一列，使得和最大

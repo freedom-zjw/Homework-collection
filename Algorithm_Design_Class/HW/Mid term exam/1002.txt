@@ -1,0 +1,30 @@
+﻿1002. 最远的距离
+Total:	222	Accepted:	64
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+小张和小华打算去一个他们没有去过的西方国家的某个城市。他们看了看这个城市的地图，发现其乡村分布呈现着一个树状结构。他们想知道，乡村与乡村间的最远距离是多少，已知一个乡村到另一个乡村的距离是1。
+
+Input
+第一行一个整数T(<=25)，表示数据的组数
+
+接下来T个例子，第一行为整数n,2<=n<=25，表示乡村个数
+
+接着n-1行，每行两个整数x,y，表示乡村x与乡村y相邻,(x!=y,1<=x,y<=n)
+
+输入保证乡村与乡村间都是有路径可以达到的
+Output
+T行，每行一个整数，表示乡村与乡村间的最远距离
+
+Sample Input
+ Copy sample input to clipboard
+2
+2
+1 2
+3
+1 2
+2 3
+Sample Output
+1
+2
+Problem Source: 期中小测

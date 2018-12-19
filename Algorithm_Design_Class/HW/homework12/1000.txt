@@ -1,0 +1,25 @@
+﻿1000. FFD for bin packing
+Total:	606	Accepted:	304
+ 	 	 
+Time Limit: 1sec    Memory Limit:256MB
+Description
+In this problem, you need to implement an FFD algorithm to approximate the bin packing problem. The FFD first sorts the items into decreasing order by size. Then, it places each item into the bin in which it will fit. If there are multiple choices, choose the bin with the smallest remaining space. If no bin is found, it opens a new bin and puts the item within the new bin.
+
+ 
+
+Input
+There may be multiple test cases. For each case, the first line has two integers n (n<=1000) and Q (Q<=1000) given the number of items and the bin size. The second line contains n integers, each corresponds to the size of an item. The size of an item is guaranteed to be no greater than Q.
+
+Output
+For each case, output the number of bins open by the FFD.
+
+Sample Input
+ Copy sample input to clipboard
+1 1
+1
+11 20
+8 7 14 9 6 9 5 15 6 7 8
+Sample Output
+1
+5
+Problem Source: ZZZ

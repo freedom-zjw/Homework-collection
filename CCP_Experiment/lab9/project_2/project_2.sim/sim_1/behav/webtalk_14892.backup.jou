@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Fri May 19 16:23:32 2017
+# Process ID: 14892
+# Current directory: C:/Users/freedom/Desktop/project_2/project_2.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source C:/Users/freedom/Desktop/project_2/project_2.sim/sim_1/behav/xsim.dir/alusim_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/freedom/Desktop/project_2/project_2.sim/sim_1/behav/webtalk.log
+# Journal file: C:/Users/freedom/Desktop/project_2/project_2.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/freedom/Desktop/project_2/project_2.sim/sim_1/behav/xsim.dir/alusim_behav/webtalk/xsim_webtalk.tcl -notrace

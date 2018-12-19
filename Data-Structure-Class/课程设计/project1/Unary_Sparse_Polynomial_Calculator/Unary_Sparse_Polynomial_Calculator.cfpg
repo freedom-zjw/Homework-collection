@@ -1,0 +1,8 @@
+<Projects version="2.0">
+	<Project active="1">Unary_Sparse_Polynomial_Calculator.cfp</Project>
+	<File active="0">main.cpp</File>
+	<File active="0">main_control.h</File>
+	<File active="0">main_control.cpp</File>
+	<File active="1">polynomial.cpp</File>
+	<File active="0">polynomial.h</File>
+</Projects>

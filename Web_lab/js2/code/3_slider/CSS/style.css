@@ -1,0 +1,72 @@
+﻿#slideMain{
+    padding: 0px;
+    height: 300px;
+    width: 770px;
+    overflow: hidden;
+    position: relative;
+    margin: 50px auto;
+}
+
+.slides{
+    white-space: nowrap;
+    position: relative;
+    height: 300px;
+    width: 770px;
+    font-size: 0;
+}
+
+#point{
+    position: absolute;
+    height: 12px;
+    width: 50px;
+    bottom: 10px;
+    right: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#point:hover{
+    cursor: pointer;
+}
+
+#p1{
+    position: relative;
+    top:-24px;
+}
+#p2{position: relative;}
+#p3{position: relative;}
+
+#arrow1{
+    position: absolute;
+    height: 80px;
+    width: 32px;
+    top: 125px;
+    left: 10px;
+    overflow: hidden;
+    visibility: hidden;
+}
+#arrow11{
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+#arrow11:hover{
+    cursor: pointer;
+}
+#arrow2{
+    position: absolute;
+    height: 80px;
+    width: 32px;
+    top: 125px;
+    right: 10px;
+    overflow: hidden;
+    visibility: hidden;
+}
+#arrow21{
+    position: relative;
+    top: -80px;
+    left: 0px;
+}
+#arrow21:hover{
+    cursor: pointer;
+}
+

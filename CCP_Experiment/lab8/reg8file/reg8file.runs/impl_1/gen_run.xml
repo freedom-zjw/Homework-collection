@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1494549397">
+  <File Type="OPT-DCP" Name="reg8file_opt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="PWROPT-DCP" Name="reg8file_pwropt.dcp"/>
+  <File Type="ROUTE-DCP" Name="reg8file_routed.dcp"/>
+  <File Type="PA-TCL" Name="reg8file.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="reg8file_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="reg8file_drc_pwropted.rpt"/>
+  <File Type="OPT-HWDEF" Name="reg8file.hwdef"/>
+  <File Type="PLACE-DCP" Name="reg8file_placed.dcp"/>
+  <File Type="PLACE-IO" Name="reg8file_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="reg8file_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="reg8file_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="reg8file_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="reg8file_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="reg8file_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="reg8file_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="reg8file_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="reg8file_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="reg8file.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="reg8file_drc_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="reg8file_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="reg8file_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="reg8file_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="reg8file_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="reg8file_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="reg8file_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="reg8file_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="reg8file_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="reg8file_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="reg8file_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="reg8file_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="reg8file_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="reg8file_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="reg8file_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="reg8file_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="reg8file.bit"/>
+  <File Type="BG-BIN" Name="reg8file.bin"/>
+  <File Type="BITSTR-MSK" Name="reg8file.msk"/>
+  <File Type="BITSTR-RBT" Name="reg8file.rbt"/>
+  <File Type="BITSTR-NKY" Name="reg8file.nky"/>
+  <File Type="BITSTR-BMM" Name="reg8file_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="reg8file.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="reg8file.sysdef"/>
+  <File Type="BG-BGN" Name="reg8file.bgn"/>
+  <File Type="BG-DRC" Name="reg8file.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/dffe.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/reg8.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/reg8file.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="reg8file"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/reg8file.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/reg8file.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015">
+      <Desc>Vivado Implementation Defaults</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
