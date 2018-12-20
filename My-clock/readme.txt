@@ -1,0 +1,3 @@
+﻿myclock：数字时钟verilog源码
+project_light_student_number：时钟入门，学号滚动显示，掌握数码管的扫描显示法
+report：数字时钟实验报告
